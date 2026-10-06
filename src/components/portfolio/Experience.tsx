@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
+import { useIndustryExperience } from "../../hooks/useIndustryExperience";
 
 const TIMELINE = [
   { t: "QUEST_01", title: "Started Learning Unity", d: "Picked up the engine, C#, and the fundamentals of gameplay programming." },
-  { t: "QUEST_02", title: "6 Months Unity Experience", d: "Built prototypes, mastered scripts, animator, physics, and UI workflows." },
-  { t: "QUEST_03", title: "3 Months Industry Experience", d: "Shipped features in a team setting — code reviews, version control, deadlines." },
-  { t: "QUEST_04", title: "Completed Launch-Ready Game", d: "Designed, coded, polished and packaged a complete 2D shooting game." },
+  { t: "QUEST_02", title: "Unity Gameplay Development", d: "Built prototypes, mastered scripts, animator, physics, and UI workflows." },
+  { t: "QUEST_03", title: "Industry Experience", d: "Shipped features in a team setting — code reviews, version control, deadlines." },
+  { t: "QUEST_04", title: "Completed Launch-Ready Game", d: "Designed, coded, polished and packaged TRIGRAX FURY, a complete 2D action shooter." },
   { t: "QUEST_05", title: "Available for Freelance Work", d: "Open to Unity gigs — prototypes, gameplay, 2D, optimization, polish." },
 ];
 
 export function Experience() {
+  const industryExperience = useIndustryExperience();
   return (
     <section id="experience" className="relative px-6 py-28 md:py-36">
       <div className="mx-auto max-w-5xl">
@@ -48,7 +50,9 @@ export function Experience() {
 
                   <div className={`glass-card hud-corners rounded-lg p-5 ${left ? "md:text-right" : "md:text-left"}`}>
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-[var(--neon-pink)]">{q.t}</div>
-                    <h3 className="mt-1 font-display text-xl font-bold uppercase text-foreground">{q.title}</h3>
+                    <h3 className="mt-1 font-display text-xl font-bold uppercase text-foreground">
+                      {q.t === "QUEST_03" ? `${industryExperience} Industry Experience` : q.title}
+                    </h3>
                     <p className="mt-2 text-sm text-foreground/75">{q.d}</p>
                   </div>
                 </motion.div>

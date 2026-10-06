@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import { FiArrowRight, FiDownload, FiSend } from "react-icons/fi";
 import { HeroScene } from "./HeroScene";
 import { NeonButton } from "./NeonButton";
+import { useIndustryExperience } from "../../hooks/useIndustryExperience";
 
 export function Hero() {
+  const industryExperience = useIndustryExperience();
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -108,7 +110,7 @@ export function Hero() {
             { k: "ENGINE", v: "Unity" },
             { k: "LANG", v: "C#" },
             { k: "PROJECTS", v: "01 / READY" },
-            { k: "XP", v: "6 MO" },
+            { k: "XP", v: industryExperience },
           ].map((s) => (
             <div key={s.k} className="glass-card hud-corners rounded-md px-4 py-3 text-left">
               <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">{s.k}</div>

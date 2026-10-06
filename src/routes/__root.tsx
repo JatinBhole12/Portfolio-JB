@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Award-worthy portfolio of Jatin Bhole, freelance Unity game developer crafting immersive 2D games and interactive sci-fi experiences." },
       { name: "author", content: "Jatin Bhole" },
       { property: "og:title", content: "Jatin Bhole — Freelance Unity Game Developer" },
-      { property: "og:description", content: "Immersive AAA-styled portfolio showcasing Unity game development, 2D shooting games, and gameplay programming." },
+      { property: "og:description", content: "Immersive AAA-styled portfolio showcasing Unity game development, including TRIGRAX FURY, a fast-paced 2D action shooter and gameplay programming work." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

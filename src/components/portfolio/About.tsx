@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
+import { useIndustryExperience } from "../../hooks/useIndustryExperience";
 
 const STATS = [
   { k: "Player Name", v: "Jatin Bhole", color: "cyan" },
   { k: "Role", v: "Unity Game Dev", color: "purple" },
   { k: "Level", v: "Lv. 06 — Rookie+", color: "cyan" },
-  { k: "Experience", v: "6 mo · 3 mo industry", color: "pink" },
+  { k: "Experience", v: "", color: "pink" },
   { k: "Status", v: "● Available", color: "cyan" },
   { k: "Mission", v: "Ship great games", color: "purple" },
 ];
 
 export function About() {
+  const industryExperience = useIndustryExperience();
   return (
     <section id="about" className="relative px-6 py-28 md:py-36">
       <div className="mx-auto max-w-6xl">
@@ -90,7 +92,7 @@ export function About() {
                   {s.k}
                 </div>
                 <div className="mt-2 font-display text-lg font-bold text-foreground">
-                  {s.v}
+                  {s.k === "Experience" ? `${industryExperience} industry` : s.v}
                 </div>
               </motion.div>
             ))}
